@@ -2,7 +2,11 @@ FROM dobor/alpine-base:latest
 
 LABEL MAINTAINER=chobon@aliyun.com
 
-ENV ARIA2_VERSION=1.35.0
+ENV ARIA2_VERSION=1.35.0 \
+    UpdateTracker=true \
+    SECRET=yourtoken \
+    CACHE=512M \
+    QUIET=true
 
 ADD https://github.com/q3aql/aria2-static-builds/releases/download/v${ARIA2_VERSION}/aria2-${ARIA2_VERSION}-linux-gnu-64bit-build1.tar.bz2 /tmp/
 
