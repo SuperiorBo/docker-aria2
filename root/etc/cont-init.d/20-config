@@ -1,0 +1,47 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p \
+	/config/ssl \
+  /downloads1 \
+  /downloads2 \
+  /downloads3 \
+  /downloads4 \
+  /downloads5
+
+# copy
+if [[ ! -e /config/aria2.conf ]]
+then
+  cp /aria2/conf/aria2.conf.default /config/aria2.conf
+fi
+
+if [[ ! -e /config/aria2.session ]]
+then
+  touch /config/aria2.session
+fi
+
+if [[ ! -e /config/dht.dat ]]
+then
+  touch /config/dht.dat
+fi
+
+# permissions
+chown -R abc:abc \
+	/config \
+  /downloads \
+  /downloads1 \
+  /downloads2 \
+  /downloads3 \
+  /downloads4 \
+  /downloads5
+  
+chmod a+x \
+  /aria2/script/delete.sh \
+  /aria2/script/delete.aria2.sh \
+  /aria2/script/tracker.sh
+
+# auto updatetracker
+if [ "$UpdateTracker" == "true" ]
+then
+  exec s6-setuidgid abc /aria2/script/tracker.sh
+fi
