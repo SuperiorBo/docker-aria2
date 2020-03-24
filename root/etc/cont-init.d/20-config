@@ -1,5 +1,7 @@
 #!/usr/bin/with-contenv bash
 
+mkdir -p /test
+
 # make folders
 mkdir -p \
 	/config/ssl \

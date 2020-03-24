@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
 exec \
-	s6-setuidgid abc aria2c \
+	s6-setuidgid aria2 aria2c \
     --conf-path=/config/aria2.conf \
     --rpc-secret=$SECRET \
     --disk-cache=$CACHE \
