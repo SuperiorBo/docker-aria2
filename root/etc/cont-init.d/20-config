@@ -43,5 +43,5 @@ chmod a+x \
 # auto updatetracker
 if [ "$UpdateTracker" == "true" ]
 then
-  exec s6-setuidgid aria2 /aria2/script/tracker.sh
+  exec s6-setuidgid aria2 sh /aria2/script/tracker.sh
 fi
