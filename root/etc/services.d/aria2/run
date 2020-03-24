@@ -5,8 +5,8 @@ exec \
     --conf-path=/config/aria2.conf \
     --rpc-secret=$SECRET \
     --disk-cache=$CACHE \
-    --quiet=$QUIET
-  > /dev/stdout \
-  2 > /dev/stderr
+    --quiet=$QUIET \
+    > /dev/stdout \
+    2 > /dev/stderr
 
 echo 'Exiting aria2'
