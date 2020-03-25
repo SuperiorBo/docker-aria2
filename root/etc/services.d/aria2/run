@@ -5,7 +5,8 @@ exec \
     --conf-path=/config/aria2.conf \
     --rpc-secret=$SECRET \
     --disk-cache=$CACHE \
-    --quiet=$QUIET
+    --quiet=$QUIET \
+    --check-certificate=false
   > /dev/stdout \
   2 > /dev/stderr
 
