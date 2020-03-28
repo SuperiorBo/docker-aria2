@@ -9,5 +9,3 @@ exec \
     --check-certificate=false
   > /dev/stdout \
   2 > /dev/stderr
-
-echo 'Exiting aria2'

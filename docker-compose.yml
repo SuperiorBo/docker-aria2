@@ -2,7 +2,8 @@ version: '3'
 
 services:
   aria2:
-    image: dobor/aria2:dev
+    build: .
+    image: aria2:dev
     container_name: aria2_dev
     environment:
       - SECRET=yourtoken
