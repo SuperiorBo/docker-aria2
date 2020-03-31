@@ -2,9 +2,8 @@ version: '3'
 
 services:
   aria2:
-    build: .
-    image: aria2:dev
-    container_name: aria2_dev
+    image: aria2:latest
+    container_name: aria2
     environment:
       - SECRET=yourtoken
       - UpdateTracker=true
